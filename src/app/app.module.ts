@@ -6,12 +6,14 @@ import { CustomerReservationComponent } from './customer-reservation/customer-re
 import { EmployeeComponent } from './employee/employee.component';
 
 import { AuthenticationService } from './authentication.service';
+import { EventTestComponent } from './event-test/event-test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerReservationComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    EventTestComponent
   ],
   imports: [
     BrowserModule
