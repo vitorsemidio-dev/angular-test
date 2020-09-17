@@ -5,6 +5,7 @@ import { CustomerReservationComponent } from './customer-reservation.component';
 describe('CustomerReservationComponent', () => {
   let component: CustomerReservationComponent;
   let fixture: ComponentFixture<CustomerReservationComponent>;
+  let custService: CustomerReservationComponent;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -17,6 +18,11 @@ describe('CustomerReservationComponent', () => {
     fixture = TestBed.createComponent(CustomerReservationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    custService = new CustomerReservationComponent();
+  });
+
+  afterEach(() => {
+    custService = null;
   });
 
   it('should create', () => {
@@ -32,5 +38,17 @@ describe('CustomerReservationComponent', () => {
 
     // Asert
     expect(isReserved).toBeTrue();
+  });
+
+  it('should register customer / increase current customer count by 1', () => {
+    const custCount = custService.registerCustomer();
+
+    expect(custCount).toEqual(11);
+  });
+
+  it('should un-register customer / decrease current customer count by 1', () => {
+    const custCount = custService.unregisterCustomer();
+
+    expect(custCount).toEqual(9);
   });
 });

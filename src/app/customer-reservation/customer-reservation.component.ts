@@ -15,6 +15,14 @@ export class CustomerReservationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  registerCustomer() {
+    return ++this.customerCount;
+  }
+
+  unregisterCustomer() {
+    return --this.customerCount;
+  }
+
   reserveRoom(): boolean {
     let roomReserved = false;
 
