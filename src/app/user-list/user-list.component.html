@@ -15,6 +15,10 @@
   </button>
 </div>
 
+<p>
+  Searching for {{ userName }} ...
+</p>
+
 <ul class="list-group">
   <li *ngFor="let user of userList; let i = index"
     id="{{ 'user_' + i }}"

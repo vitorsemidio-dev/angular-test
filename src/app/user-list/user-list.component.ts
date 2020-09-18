@@ -11,6 +11,7 @@ export class UserListComponent implements OnInit {
   userList = [];
   tempUserList = [];
   searchText = '';
+  userName = '';
 
   constructor(
     private userService: UserService,
@@ -23,11 +24,10 @@ export class UserListComponent implements OnInit {
   }
 
   filterUserList(event) {
-    console.log(this.searchText);
+    this.userName = this.searchText;
     this.userService.filterUserList(this.searchText).then(
       data => {
         this.userList = data;
-        console.log(data);
       }
     );
   }
