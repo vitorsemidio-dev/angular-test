@@ -7,13 +7,15 @@ import { EmployeeComponent } from './employee/employee.component';
 
 import { AuthenticationService } from './authentication.service';
 import { EventTestComponent } from './event-test/event-test.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerReservationComponent,
     EmployeeComponent,
-    EventTestComponent
+    EventTestComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule

@@ -1,0 +1,24 @@
+<h1>User List</h1>
+
+<div class="d-flex">
+  <input
+    type="text"
+    class="flex-grow-1"
+    id="myInput"
+    [(ngModel)]="searchText"
+  >
+  <button
+    id="searchButton"
+    (click)="filterUserList($event)"
+    class="btn btn-primary ml-3">
+    Search
+  </button>
+</div>
+
+<ul class="list-group">
+  <li *ngFor="let user of userList; let i = index"
+    id="{{ 'user_' + i }}"
+    class="list-item">
+    {{ user.name }} - <strong> {{ user.username }}</strong>
+  </li>
+</ul>
