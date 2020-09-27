@@ -28,13 +28,14 @@ describe('UserListComponent', () => {
     component = fixture.componentInstance;
     userService = TestBed.get(UserService);
     debugElement = fixture.debugElement;
+    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  fit('should test filter user list (done)', (done) => {
+  it('should test filter user list (done)', (done) => {
     component.searchText = 'Clementine';
     const userSpy = spyOn(userService, 'filterUserList').and.callThrough();
 
@@ -50,7 +51,7 @@ describe('UserListComponent', () => {
     });
   });
 
-  fit('should test filter user list (async)', async () => {
+  it('should test filter user list (async)', async () => {
     component.searchText = 'Clementine';
 
     const userSpy = spyOn(userService, 'filterUserList').withArgs('Clementine').and.callThrough();
